@@ -1,0 +1,674 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Petition of Right (1628)</title>
+    <meta name="descrtion" content="this is the mana carta ">
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: linear-gradient(to right,#6a11cb 0%, #2575fc 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color:#6a11cb 0%, #2575fc;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            margin: 0 0.3rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(#6a11cb 0%, #2575fc), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        h2 {
+            color:#6a11cb 0%, #2575fc 100%;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.8rem;
+            border-left: 5px solid #6a11cb 0%, #2575fc;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: #6a11cb 0%, #2575fc;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc);
+            color: white;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.7rem;
+        }
+
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background:#6a11cb 0%, #2575fc;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #6a11cb 0%, #2575fc;
+            font-size: 1.2rem;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .member:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #6a11cb 0%, #2575fc;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background:#6a11cb 0%, #2575fc;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background:#6a11cb 0%, #2575fc;
+            transform: translateY(-5px);
+        }
+        @media (max-width: 768px) {}
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            nav a {
+                margin: 0.3rem;
+                padding: 0.6rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        body {
+            background: linear-gradient(135deg, #f5f1e6 0%, #e8dfca 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+            background-image: url('https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(to right, #8B4513, #A0522D);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-container {
+            margin: 2rem auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            border: 5px solid #6a11cb 0%, #2575fc;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .content {
+            padding: 2rem 3rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        h4 {
+            color:#6a11cb 0%, #2575fc;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #6a11cb 0%, #2575fc;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h5 {
+            color: #6a11cb 0%, #2575fc;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        ol {
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        ol p {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: #f9f5f0;
+            border-radius: 8px;
+            border-left: 4px solid#6a11cb 0%, #2575fc;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background:#6a11cb 0%, #2575fc;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item {
+            background:#6a11cb 0%, #2575fc;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(2) {
+            background:#6a11cb 0%, #2575fc;
+        }
+
+        .timeline-item:nth-child(3) {
+            background:#6a11cb 0%, #2575fc;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f5f0;
+            border-radius: 10px;
+            border-left: 5px solid#6a11cb 0%, #2575fc;
+            border-right: 5px solid #6a11cb 0%, #2575fc;
+        }
+
+        .quote::before, .quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: #6a11cb 0%, #2575fc;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #6a11cb 0%, #2575fc;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6a11cb 0%, #2575fc;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+      <nav><a href="introdaction.html" >back to minue</a> |</nav>
+    <center>
+        <div>
+            <B>
+                <h1>1628</h1>
+                <h2> The Petition of Right</h2>
+            </B>
+            <div class="image-container fade-in">
+            <img src="1000146413.jpg" width="300" hight="200" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+        </div>
+    </center>
+
+    </div>
+    </div>
+<p>During the reign of King Charles I, the English Parliament presented the Petition of Right after the king imposed taxes and imprisoned people without lawful reasons.</p>
+<b><h4>Main Provisions</h4></b>
+<ol start="1"> 
+    <p>1.	No taxation without the consent of Parliament.</p>
+    <p>2.   No imprisonment without a valid legal cause.</p>
+    <p>3.   Citizens could not be forced to house soldiers.</p>
+    <p>4.	Martial law could not be applied during peacetime</p>
+</ol>
+<h5>Later Developments:</h5>
+<p>The Habeas Corpus Act (1679): Protected individuals from unlawful imprisonment.</p>
+<p>The Bill of Rights (1689): Guaranteed the rights of citizens and Parliament, and limited the power of the monarchy.</p>
+<script>
+    // تأثير الظهور التدريجي للعناصر
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // تفعيل عند التمرير
+            window.addEventListener('scroll', fadeInOnScroll);
+            // تفعيل مرة أولى عند التحميل
+            fadeInOnScroll();
+            
+            // زر العودة للأعلى
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // تأثيرات إضافية للصورة
+            const image = document.querySelector('.image-container img');
+            
+            image.addEventListener('mouseenter', () => {
+                image.style.transform = 'scale(1.05) rotate(1deg)';
+            });
+            
+            image.addEventListener('mouseleave', () => {
+                image.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+</script>
+</body>
+
+</html>

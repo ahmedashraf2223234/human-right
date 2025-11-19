@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THE universal declaration of human right</title>
+        <meta charset="UTF-8">
+        <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: linear-gradient(to right,#6a11cb 0%, #2575fc 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color:#6a11cb 0%, #2575fc;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            margin: 0 0.3rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(#6a11cb 0%, #2575fc), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        h2 {
+            color:#6a11cb 0%, #2575fc 100%;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.8rem;
+            border-left: 5px solid #6a11cb 0%, #2575fc;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: #6a11cb 0%, #2575fc;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc);
+            color: white;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.7rem;
+        }
+
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background:#6a11cb 0%, #2575fc;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #6a11cb 0%, #2575fc;
+            font-size: 1.2rem;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .member:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #6a11cb 0%, #2575fc;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background:#6a11cb 0%, #2575fc;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background:#6a11cb 0%, #2575fc;
+            transform: translateY(-5px);
+        }
+        @media (max-width: 768px) {}
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            nav a {
+                margin: 0.3rem;
+                padding: 0.6rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        body {
+            background: linear-gradient(135deg, #f5f1e6 0%, #e8dfca 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+            background-image: url('https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(to right, #8B4513, #A0522D);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-container {
+            margin: 2rem auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            border: 5px solid #6a11cb 0%, #2575fc;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .content {
+            padding: 2rem 3rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        h4 {
+            color:#6a11cb 0%, #2575fc;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #6a11cb 0%, #2575fc;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h5 {
+            color: #6a11cb 0%, #2575fc;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        ol {
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        ol p {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: #f9f5f0;
+            border-radius: 8px;
+            border-left: 4px solid#6a11cb 0%, #2575fc;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background:#6a11cb 0%, #2575fc;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item {
+            background:#6a11cb 0%, #2575fc;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(2) {
+            background:#6a11cb 0%, #2575fc;
+        }
+
+        .timeline-item:nth-child(3) {
+            background:#6a11cb 0%, #2575fc;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f5f0;
+            border-radius: 10px;
+            border-left: 5px solid#6a11cb 0%, #2575fc;
+            border-right: 5px solid #6a11cb 0%, #2575fc;
+        }
+
+        .quote::before, .quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: #6a11cb 0%, #2575fc;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #6a11cb 0%, #2575fc;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6a11cb 0%, #2575fc;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        </style>
+    </head>
+    <body>
+        <nav><a href="introdaction.html" >back to minue</a> |</nav>
+        <div style="text-align: center; margin-top: 50px;" style ="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h1>The Universal Declaration of Human Rights (UDHR)</h1>
+        <div class="image-container" style="margin-top: 30px;">
+        <img src ="unga75.jpg" width="400" height="300" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+        </div>
+       <ol>
+        <p> On December 10, 1948, the General Assembly of the
+ United Nations adopted and proclaimed the Universal
+ Declaration of Human Rights, the full text of which
+ appears in the following pages</p>
+</ol>
+        </div>
+        <div class="content" style="max-width: 800px; margin: 50px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; line-height: 1.6;">
+        <h2>Article 1</h2>
+        <ol>
+        <p>All human beings are born free and equal in
+ dignity and rights.</p>
+ <p>They are endowed with reason
+ and conscience and should act towards one
+ another in a spirit of brotherhood</p>
+</ol>
+<h2>Article 2</h2>
+<ol>
+    <p>Everyone is entitled to all the rights and freedoms
+ set forth in this Declaration, without distinction of
+ any kind, such as race, colour, sex, language,
+ religion, political or other opinion, national or
+ social origin, property, birth or other status</p>
+</ol>
+<h2>Article 3</h2>
+<ol>
+<p> Everyone has the right to life, liberty and security of
+ person</p>
+</ol>
+ <h2>Article 4</h2>
+ <ol>
+    <p> No one shall be held in slavery or servitude; slavery
+ and the slave trade shall be prohibited in all their
+ forms</p>
+</ol>
+    <h2>Article 5</h2>
+    <ol>
+    <p> No one shall be subjected to torture or to cruel,
+ inhuman or degrading treatment or punishment.</p>
+</ol>
+ <h2>Article 6</h2>
+ <OL>
+ <p> Everyone has the right to recognition
+ everywhere as a person before the Law</p>
+</OL>
+ <h2>Article 7</h2> 
+ <ol>
+ <p> All are equal before the law and are entitled
+ without any discrimination to equal protection
+ of the law</p>
+ <p> All are entitled to equal protection
+ against any discrimination in violation of this
+ Declaration and against any incitement to
+ such discrimination</p>
+</ol>
+<h2>Article 8</h2>
+<OL>
+<p> Everyone has the right to an effective remedy
+ by the competent national tribunals for acts
+ violating the fundamental rights granted him by
+ the constitution or by law.</p>
+</OL>
+ <h2>Article 9</h2>
+ <OL>
+ <p> No one shall be subjected to arbitrary
+ arrest, detention or exile.</p>
+</OL>
+ <h2>Article 10</h2>
+ <ol>
+ <p>Everyone is entitled in full equality to a fair and public
+ hearing by an independent and impartial tribunal , in the
+ determination of his rights and obligations and of any
+ criminal charge against him</p>
+</ol>
+ <h2>Article 11</h2>
+    <ol>
+        <P>Everyone charged with a penal offence has the
+ right to be presumed innocent until proved guilty
+ according to law in a public trial at which he has had all
+ the guarantees necessary for his defence</P>
+ <p>No one shall be held guilty of any penal offence on
+ account of any act or omission which did not constitute
+ a penal offence, under national or international law, at
+ the time when it was committed.</p>
+    </ol>
+    <h2>Article 12</h2>
+    <ol>
+        <p>Everyone has the right to freedom of movement and
+ residence within the borders of each State.</p>
+ <p>Everyone has the right to leave any country, including his
+ own, and to return to his country.</p>
+    </ol>
+    <h2>Article 13</h2>
+    <ol>
+        <P>Everyone has the right to a nationality</P>
+        <p>-No one shall be arbitrarily deprived of his nationality nor
+ denied the right to change his nationality</p>
+    </ol>
+    <h2>Article 14</h2>
+    <ol>
+        <p>Everyone has the right to own property alone as well as
+ in association with others</p>
+ <p>No one shall be arbitrarily deprived of his property.</p>
+    </ol>
+    <h2>Article 15</h2>
+    <ol>
+        <P> Everyone has the right to freedom of opinion and
+ expression; this right includes freedom to hold opinions
+ without interference and to seek, receive and impart
+ information and ideas through any media and regardless of
+ frontiers</P>
+    </ol>
+    <h2>Article 16</h2>
+    <ol>
+        <P>Everyone has the right to freedom of peaceful
+ assembly and association</P>
+        <p>No one may be compelled to belong to an
+ association.</p>
+    </ol>
+    <h2>Article 17</h2>
+    <OL class="nember">
+        <P>Everyone has the right to take part in the government of
+ his country, directly or through freely chosen
+ representatives</P>
+        <p>Everyone has the right to equal access to public service in
+ his country.</p>
+        <P>-The will of the people shall be the basis of the authority
+ of government; this will shall be expressed in periodic and
+ genuine elections which shall be by universal and equal
+ suffrage and shall be held by secret vote or by equivalent
+ free voting procedures</P>
+    </OL>
+    <h2>Article 18</h2>
+    <ol>
+        <P> Everyone has the right to work, to free choice of
+ employment, to just and favourable conditions of work and
+ to protection against unemployment</P>
+        <p>Everyone, without any discrimination, has the right to
+ equal pay for equal work</p>
+        <p>Everyone who works has the right to just and favourable
+ remuneration ensuring for himself and his family an
+ existence worthy of human dignity, and supplemented, if
+ necessary, by other means of social protection.</p>
+        <p>Everyone has the right to form and to join trade unions for
+ the protection of his interests</p>
+    </ol>
+    <h2>Article 19</h2>
+    <ol>
+        <p> Everyone has the right to rest and leisure, including 
+reasonable limitation of working hours and periodic 
+holidays with pay.</p>
+    </ol>        
+    <h2>Aritcle 20</h2> 
+    <ol>
+        <p>Everyone has the right to education. Education
+ shall be free, at least in the elementary and
+ fundamental stages</p>
+        <P>Elementary education shall be
+ compulsory</P>
+        <P>Technical and professional education
+ shall be made generally available and higher
+ education shall be equally accessible to all on the
+ basis of merit</P>
+        <P>Education shall be directed to the full development of the
+ human personality and to the strengthening of respect for
+ human rights and fundamental freedoms.</P>
+        <P>Parents have a prior right to choose the kind of education
+ that shall be given to their children</P>
+    </ol>
+    <h2>Article 21</h2>
+    <ol>
+        <P>Everyone has the right freely to participate in the cultural
+ life of the community, to enjoy the arts and to share in
+ scientific advancement and its benefits</P>
+        <P>Everyone has the right to the protection of the moral and
+ material interests resulting from any scientific, literary or artistic
+ production of which he is the author</P>
+    </ol>
+    <h2>Article 22</h2>
+    <ol>
+        <p>Everyone has duties to the community in which alone
+ the free and full development of his personality is
+ possible</p>
+        <p>In the exercise of his rights and freedoms, everyone
+ shall be subject only to such limitations as are determined
+ by law solely for the purpose of securing due recognition
+ and respect for the rights and freedoms of others and of
+ meeting the just requirements of morality, public order
+ and the general welfare in a democratic society</p>
+        <p>These rights and freedoms may in no case be exercised
+ contrary to the purposes and principles of the United
+ Nations</p>
+    </ol>
+        </div>
+    </body>
+</html>
